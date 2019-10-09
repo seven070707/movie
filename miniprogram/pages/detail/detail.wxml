@@ -1,0 +1,22 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view>
+<view wx:else  class='detail-bg'>
+  <view class="detail-card">
+    <image class="movie-image" src="{{movie.image}}"></image>
+    <view class="movie-name">{{movie.name}}</view>
+    <view class="movie-detail">{{movie.detail}}</view>
+    <view class="movie-view">
+      <image class="view" src="/images/chakanyingping.png" bindtap="onTapViewComment"></image>
+      <image class="add" src="/images/tianjiayingping.png" bindtap="actionSheetTap"></image>
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+        <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+    </view>
+  </view>
+
+</view>

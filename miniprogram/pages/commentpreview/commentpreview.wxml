@@ -1,0 +1,26 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view>
+<view wx:else  class='detail-bg'>
+  <view class="detail-card">
+    <image class="movie-image" src="{{movie.movieImage}}"></image>
+    <view class="movie-name">{{movie.movieName}}</view>
+    <view class="user-info">
+      <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-name">{{userInfo.nickName}}的影评</view>
+    </view>
+    <view wx:if = "{{movie.contentSize}}" class="movie-record">
+      <image class="record-play" src="/images/record-play.png" bindtap="onTapPlayRecord"></image>
+      <view class="movie-detail">{{movie.contentSize}}秒</view>
+    </view>
+    <view wx:else>
+      <view class="movie-detail">{{movie.content}}</view>
+    </view>
+    <view class="movie-view">
+      <image class="view" src="/images/chongxinbianji.png" bindtap="onTapBack"></image>
+      <image class="add" src="/images/fabuyingping.png" bindtap="onTapSubmit"></image>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,15 @@
+<!--pages/list/list.wxml-->
+<!-- <view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view> -->
+<view class='list-bg'>
+  <navigator class="list-block" url="/pages/detail/detail?id={{item._id}}" wx:for="{{movieList}}" wx:key="id">
+    <view class="list-card">
+      <image class="list-image" mode="widthFix" src="{{item.image}}"></image>
+      <view class="list-info">
+        <view class="list-name">{{item.name}}</view>
+        <view class="list-type">{{item.type}}</view>
+      </view>
+    </view>
+  </navigator>
+</view>

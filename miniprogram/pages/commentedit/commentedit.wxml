@@ -1,0 +1,21 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view>
+<view wx:else  class='detail-bg'>
+  <view class="detail-card">
+    <view class="movie-name">{{movie.name}}</view>
+    <view wx:if="{{menu == 1}}">
+      <view class="review-content">
+        <textarea class="review-input" placeholder-class="review-placeholder"     placeholder="Please leave your public comment..." maxlength="255" bindinput='onInput'></textarea>
+      </view>
+    </view>
+    <view wx:else class="review-recordview">
+      <image class="review-record" src="/images/luyin.png" bindtap="onTapRecord" bind:touchstart='startRecord' bind:touchend='stopRecord'>
+      </image>
+    </view>
+  </view>
+  <view class="bottom-btn" bindtap="onTapSubmit">
+    <view class="bottom-text">完成</view>
+  </view>
+</view>

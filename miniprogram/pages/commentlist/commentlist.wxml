@@ -1,0 +1,22 @@
+<!--pages/commentlist/commentlist.wxml-->
+<view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view>
+<view wx:else  class='list-bg'>
+  <view class="list-fix"></view>
+  <navigator class="list-block" url="/pages/commentdetail/commentdetail?id={{item._id}}" wx:for="{{commentList}}" wx:key="id">
+    <view class="list-card">
+      <image class="user-image" mode="widthFix" src="{{item.avatar}}"></image>
+      <view class="user-name">{{item.username}}</view>
+    </view>
+    <view wx:if = "{{item.contentSize}}" class="movie-record">
+      <image class="record-play" src="/images/record-play.png" bindtap="onTapPlayRecord"></image>
+      <view class="movie-detail">{{item.contentSize}}秒</view>
+    </view>
+    <view wx:else>
+      <view class="user-content">{{item.content}}</view>
+    </view>
+  </navigator>
+  
+</view>
+<view class="list-buttom" bindtap="onTapBackHome">回到首页</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "热门电影",
+  "usingComponents": {
+    "login": "/components/login/login"
+  }
+}

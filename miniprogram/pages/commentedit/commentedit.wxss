@@ -1,0 +1,109 @@
+.review-content {
+  margin: 29rpx 27rpx 0;
+  padding-bottom: 26rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 13rpx 5rpx rgba(0, 0, 0, 0.02);
+  border-radius: 10rpx;
+}
+
+.review-button.disable {
+  color: rgba(52, 55, 61, 0.5);
+}
+
+.review-input {
+  width: 100%;
+  height: 207rpx;
+  padding: 29rpx 34rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.review-placeholder {
+  color: rgba(29, 29, 38, 0.4);
+}
+
+.bottom-btn{
+  /* 固定定位 */
+  position: fixed;
+  /* 距离底部为0 */
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color:rgba(5, 202, 5);
+  color: rgba(5, 202, 5);
+  text-align: center
+}
+
+.bottom-text {
+  font-size: 28rpx;
+  color: rgb(255, 255, 255);
+  line-height: 67rpx;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+
+}
+
+.review-recordview{
+  width: 100%;
+  display: block
+}
+
+.review-record{
+  display: block;
+  margin: 220rpx auto;
+  width: 130rpx;
+  height: 60rpx;
+}
+
+.detail-bg{
+  background-color: rgb(236, 235, 235);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 13rpx 5rpx rgba(0, 0, 0, 0.02);
+  min-height: 80vh;
+  width: 600rpx;
+  margin: 50rpx 50rpx;
+}
+
+.movie-name {
+  margin: 20rpx auto;
+  font-size: 38rpx;
+  line-height: 53rpx;
+  color: rgba(29, 29, 38, 0.8);
+  font-weight: bold;
+}
+
+.movie-detail {
+  margin: 30rpx 49rpx 0;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #8B8B8B;
+}
+
+.movie-view{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.view{
+  width: 150rpx;
+  height: 55rpx;
+}
+
+.add{
+  width: 150rpx;
+  height: 55rpx;
+  margin-right: 0rpx;
+}

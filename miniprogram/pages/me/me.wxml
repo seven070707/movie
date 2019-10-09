@@ -1,0 +1,36 @@
+<view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view>
+
+<view wx:else  class='list-bg'>
+  <view class='list-msg2' bindtap='bindShowMsg'>
+        <text>{{tihuoWay}}</text>
+        <image style='height:20rpx;width:20rpx;' src='/images/xiala.png'></image>
+  </view>
+  <view class="select_box" wx:if="{{select}}">
+        <view class="select_one" bindtap="mySelect" data-name="收藏的影评">收藏的影评</view>
+        <view class="select_one" bindtap="mySelect" data-name="已发布的影评">已发布的影评</view>
+  </view>
+  <navigator class="list-block" url="/pages/detail/detail?id={{item.movieId}}" wx:for="{{movieList}}" wx:key="id">
+    <view class="list-card">
+      <image class="list-image" mode="widthFix" src="{{item.movieImage}}"></image>
+      <view class="list-info">
+        <view class="list-name">{{item.movieName}}</view>
+        <view wx:if = "{{item.contentSize}}" class="movie-record">
+          <image class="record-play" src="/images/record-play.png" bindtap="onTapPlayRecord"></image>
+          <view class="movie-detail">{{item.contentSize}}秒</view>
+        </view>
+        <view wx:else>
+          <view class="list-type">{{item.content}}</view>
+        </view>
+        <view class="user-info">
+          <image class="user-image" mode="widthFix" src="{{item.avatar}}"></image>
+          <view class="user-name">{{item.username}}</view>
+      </view>
+      </view>
+      
+    </view>
+  </navigator>
+</view>
+
+<view class="list-buttom" bindtap="onTapBackHome">回到首页</view>

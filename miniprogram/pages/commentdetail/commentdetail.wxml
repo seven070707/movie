@@ -1,0 +1,38 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{!userInfo}}">
+  <login bindonLogin="onTapLogin"></login>
+</view>
+<view wx:else  class='detail-bg'>
+  <view class="detail-card">
+    <image class="movie-image" src="{{movie.movieImage}}"></image>
+    <view class="movie-name">{{movie.movieName}}</view>
+    <view class="user-info">
+      <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-name">{{userInfo.nickName}}的影评</view>
+    </view>
+    <view wx:if = "{{movie.contentSize}}" class="movie-record">
+      <image class="record-play" src="/images/record-play.png" bindtap="onTapPlayRecord"></image>
+      <view class="movie-detail">{{movie.contentSize}}秒</view>
+    </view>
+    <view wx:else>
+      <view class="movie-detail">{{movie.content}}</view>
+    </view>
+    <!-- <view class="movie-detail">{{movie.content}}</view> -->
+    <view class="movie-view">
+      <image class="view" src="/images/shoucangyingping.png" bindtap="onTapStore"></image>
+      <view wx:if="{{submit}}" class="add">
+        <image class="add" src="/images/xieyingping.png" bindtap="actionSheetTap"></image>
+        <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+        <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+      </view>
+      <view wx:else class="add">
+        <image class="add" src="/images/xieyingping.png" bindtap="onTapJumpDetail"></image>
+      </view>
+    </view>
+  </view>
+
+</view>

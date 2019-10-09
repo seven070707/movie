@@ -1,0 +1,16 @@
+<!--pages/home/home.wxml-->
+<!-- <image src='/images/bg.png' class='bg'></image> -->
+<image src="/images/no-1.png" class="top"></image>
+<view class="bg">
+</view>
+
+<view class="footer">
+<!-- <button class="scannerButton" type="primary" bindtap="" >Scan</button> -->
+<button class="menuBotton scanner" type="primary" bindtap="goToScanner" ><view class="menuIcon">📷</view> Scanner</button>
+<button class="menuBotton history" type="primary" bindtap="goToHistory" ><view class="menuIcon">📔</view>History</button>
+<button class="menuBotton news" type="primary" bindtap="goToNew" ><view class="menuIcon">📰</view>News</button>
+<button class="menuBotton settings" type="primary" bindtap="goToSetting" ><view class="menuIcon">📶</view>Settings</button>
+<button class="menuBotton shops" type="primary" bindtap="goToShop" ><view class="menuIcon">💳</view>Shops</button>
+
+</view>
+<!-- <image src="/images/no-2.png" class="buttom" bindtap="onTapPhoto"></image> -->

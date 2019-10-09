@@ -1,0 +1,23 @@
+<!--pages/home/home.wxml-->
+<image src='/images/bg.png' class='bg'></image>
+<view class='hot-card' >
+  <view class="hot-movie">
+    <image class="hot-image" src="{{commentList[0].movieImage}}" bindtap='onTapMovieDetail' ></image>
+    <view class="hot-movie-name">{{commentList[0].movieName}}</view>
+    <view class="hot-movie-user" bindtap="onTapComment">
+      <image class="hot-user-head" src="{{commentList[0].avatar}}"></image>
+      <view class="hot-user-name">{{commentList[0].username}}向你推荐了一部电影</view>  
+    </view>
+  </view>
+</view>
+
+<view class="bottom-btn">
+  <view class="botom-tab" bindtap='onTapList'>
+    <image class="movie-list" src="/images/rementuijian.png"></image>
+    <view class="movie-title">热门</view>
+  </view>
+  <view class="botom-tab" bindtap="onTapMe">
+    <image class="movie-list" src="/images/rementuijian.png"></image>
+    <view class="movie-title">我的</view>
+  </view>
+</view>
