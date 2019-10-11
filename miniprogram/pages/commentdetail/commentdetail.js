@@ -61,6 +61,18 @@ Page({
   },
 
   /**
+     * 播放音频
+     */
+  onTapPlayRecord() {
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = this.data.movie.content
+    innerAudioContext.onPlay(() => {
+      console.log('开始播放')
+    })
+  },
+  
+  /**
    * 收藏这个影评
    */
   onTapStore(){

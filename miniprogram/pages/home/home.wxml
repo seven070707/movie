@@ -2,11 +2,11 @@
 <image src='/images/bg.png' class='bg'></image>
 <view class='hot-card' >
   <view class="hot-movie">
-    <image class="hot-image" src="{{commentList[0].movieImage}}" bindtap='onTapMovieDetail' ></image>
-    <view class="hot-movie-name">{{commentList[0].movieName}}</view>
+    <image class="hot-image" src="{{commentList.movieImage}}" bindtap='onTapMovieDetail' ></image>
+    <view class="hot-movie-name">{{commentList.movieName}}</view>
     <view class="hot-movie-user" bindtap="onTapComment">
-      <image class="hot-user-head" src="{{commentList[0].avatar}}"></image>
-      <view class="hot-user-name">{{commentList[0].username}}向你推荐了一部电影</view>  
+      <image class="hot-user-head" src="{{commentList.avatar}}"></image>
+      <view class="hot-user-name">{{commentList.username}}向你推荐了一部电影</view>  
     </view>
   </view>
 </view>

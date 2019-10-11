@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    commentList: [],
+    commentList: {},
   },
 
   onTapList(){
@@ -41,10 +41,16 @@ Page({
     })
   },
 
+  onPullDownRefresh() {
+    this.getCommentList(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
+
   /**
    * 获取影评列表
    */
-  getCommentList() {
+  getCommentList(callback) {
     wx.showLoading({
       title: 'Loading...'
     })
@@ -57,10 +63,15 @@ Page({
 
 
       if (data) {
+        var list = data
         this.setData({
-          commentList: data
+          commentList: list[Math.floor((Math.random() * list.length))]
+          
         })
+
+        console.log(this.data.commentList)
       }
+      
     }).catch(err => {
       console.error(err)
       wx.hideLoading()
@@ -70,13 +81,16 @@ Page({
         title: 'Failed',
       })
     })
+
+    typeof callback === 'function' && callback()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.stopPullDownRefresh()
+    this.getCommentList()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -90,11 +104,6 @@ Page({
    */
   onShow: function () {
   
-    this.getCommentList()
-
-    this.setData({
-      commentList: this.data.commentList
-    })
   },
 
   /**
@@ -108,13 +117,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
 
   },
 

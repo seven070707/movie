@@ -11,7 +11,7 @@
         <view class="select_one" bindtap="mySelect" data-name="收藏的影评">收藏的影评</view>
         <view class="select_one" bindtap="mySelect" data-name="已发布的影评">已发布的影评</view>
   </view>
-  <navigator class="list-block" url="/pages/detail/detail?id={{item.movieId}}" wx:for="{{movieList}}" wx:key="id">
+  <navigator class="list-block" url="/pages/commentdetail/commentdetail?id={{item._id}}" wx:for="{{movieList}}" wx:key="id">
     <view class="list-card">
       <image class="list-image" mode="widthFix" src="{{item.movieImage}}"></image>
       <view class="list-info">
